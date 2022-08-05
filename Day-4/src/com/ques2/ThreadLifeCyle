@@ -1,0 +1,33 @@
+
+
+
+Q2) Explain the Thread Life Cycle in Java with your own words.
+
+==> In Java, a thread always exists in any one of the following states. These states are.
+
+   1. New
+   2. Active
+   3. Blocked / Waiting
+   4. Timed Waiting
+   5. Terminated
+
+ 1. New: Whenever a new thread is created, it is always in the new state. For a thread in the new state,
+         the code has not been run yet and thus has not begun its execution.
+
+ 2. Active: When a thread invokes the start() method, it moves from the new state to the active state.
+            The active state contains two states within it: one is runnable, and the other is running.
+
+ 3. Runnable: A thread, that is ready to run is then moved to the runnable state. In the runnable state, the thread may be running or may be ready to run at any given instant of time.
+              It is the duty of the thread scheduler to provide the thread time to run, i.e., moving the thread the running state.
+
+ 4. Blocked or Waiting: Whenever a thread is inactive for a span of time (not permanently) then, either the thread is in the blocked state or is in the waiting state.
+
+ 5. Timed Waiting: Sometimes, waiting for leads to starvation. For example, a thread (its name is A) has entered the critical section of a code and is not willing to leave that critical section.
+    In such a scenario, another thread (its name is B) has to wait forever, which leads to starvation.
+    To avoid such scenario, a timed waiting state is given to thread B. Thus, thread lies in the waiting state for a specific span of time, and not forever.
+    A real example of timed waiting is when we invoke the sleep() method on a specific thread. The sleep() method puts the thread in the timed wait st
+
+ 6. Terminated: A thread reaches the termination state because of the following reasons:
+
+    * When a thread has finished its job, then it exists or terminates normally.
+    * Abnormal termination: It occurs when some unusual events such as an unhandled exception or segmentation fault.
